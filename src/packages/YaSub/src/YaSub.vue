@@ -15,7 +15,7 @@
     import {compressImg, resetToblob} from "@/utils"
 
     export default {
-        name: "YanSub",
+        name: "YanYaSub",
         data() {
             return {
                 backImg:'https://deeplor.oss-cn-hangzhou.aliyuncs.com/matting/2020/09/24/upimg.png',
@@ -44,7 +44,10 @@
                 type: Number,
                 default: 0.75
             },
-            action: String,//上传地址----------
+            action: {//上传地址----------
+                type:String,
+                required:true
+            },
             headers: {//请求头---------
                 type: Object,
                 default: function () {

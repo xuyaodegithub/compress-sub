@@ -6,21 +6,71 @@
 
 ``` bash
 # install dependencies
-npm install compress-sub
-
-全局引用
-import compressSub form compress-sub
-Vue.use(compressSub)
-按需引用
-import {compressSub} form compress-sub
-Vue.component(compressSub.name,compressSub)
+npm install yan-compress-sub
 
 # serve with hot reload at localhost:8080
 npm run dev
 
-
 # build for production with minification
 npm run build
+```
+
+### 使用方法
+暂时就一个组件   后续会出其他组件   有需求的可以提
+全局引用
+import YanSubs form yan-compress-sub
+Vue.use(YanSubs)
+按需引用
+import { SubName } form yan-compress-sub
+Vue.component(SubName.name,SubName)
+
+
+
+# 组件列表
+
+## compressSub 图片上传组件（带压缩功能）
+适用图片上传对图片大小有要求的
+
+### 基础用法
+```html
+ <yan-compress-sub :pressType="pressType"
+                   :maxSize="maxSize"
+                   :action="baseUrl"
+                   :ratio="ratio"
+                   :data="data"
+                   :errUpload="errUpload"
+                   :beforeUpload="beforeUpload"
+                   :successUpload="successUpload"
+                   :uploadEnd="uploadEnd">
+    </yan-compress-sub>
+
+<script>
+  export default {
+    data() {
+      return {
+           baseUrl: 'http://restapidev.picup.shop/oss/upload',//示例
+           data: {a: 1},
+           pressType:'size',
+           maxSize:1024,
+           ratio:0.5
+      };
+    },
+    methods: {
+            beforeUpload(file){
+                console.log(file,111111)
+            },
+            successUpload(res){
+                console.log('上传成功',22222)
+            },
+            uploadEnd(){
+                console.log('上传完成')
+            },
+            errUpload(err){
+              console.log('上传失败',err)
+            }
+    }
+  };
+</script>
 ```
 
 ### Attributes
@@ -31,7 +81,7 @@ npm run build
 | height  | 组件高度    | string / number   | — | 200   |
 | pressType  | 压缩方式(quality代表通过降低图片质量压缩、size代表通过降低图片尺寸压缩)    |string   | quality / size | quality   |
 | maxSize  |  图片允许的最大 大小 如果低于此值 则不会压缩 否则会压缩（单位kb）   |number   | — | 1024   |
-| ratio  | 压缩比率，压缩后的图片宽高和原图片宽高比（0-1）、或者是压缩后与压缩前的图片质量比    | number   | — | 0.75 |
+| ratio  | 压缩比率，或者是压缩后与压缩前的图片质量比/压缩后的图片宽高和原图片宽高比（0-1）    | number   | — | 0.75 |
 | action  | 图片上传接口地址（必填）    | string   | — | — |
 | headers  | 请求头    | object   | — | {'Content-Type': 'multipart/form-data'}|
 | data  | 上传携带的额为参数    | object | — | — |

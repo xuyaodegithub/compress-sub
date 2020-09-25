@@ -1,8 +1,8 @@
 {
-  "name": "compress-sub",
+  "name": "yan-compress-sub",
   "description": "图片压缩上传插件",
-  "Keywords":"图片上传、图片压缩",
-  "version": "0.0.5",
+  "keywords":["图片上传","图片压缩","压缩上传","上传组件","压缩组件"],
+  "version": "0.0.1",
   "author": "Mr.Yan(x845275351@163.com)",
   "license": "MIT",
   "private": false,

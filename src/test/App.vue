@@ -1,10 +1,14 @@
 <template>
   <div id="app">
     1111阿斯达所多
-   <compress-sub :pressType="pressType" :maxSize="maxSize" :action="baseUrl" :ratio="0.5" :data="data" :disabled="false" :errUpload="errUpload" :beforeUpload="beforeUpload" :successUpload="successUpload" :uploadEnd="uploadEnd">
-   </compress-sub>
-    <yan-sub :pressType="pressType" :maxSize="maxSize" :action="baseUrl" :ratio="0.5" :data="data" :disabled="false" :errUpload="errUpload" :beforeUpload="beforeUpload" :successUpload="successUpload" :uploadEnd="uploadEnd">
-   </yan-sub>
+    <yan-compress-sub :pressType="pressType" :maxSize="maxSize" :action="baseUrl" :ratio="0.5" :data="data"
+                      :disabled="false" :errUpload="errUpload" :beforeUpload="beforeUpload"
+                      :successUpload="successUpload" :uploadEnd="uploadEnd">
+    </yan-compress-sub>
+    <yan-ya-sub :pressType="pressType" :maxSize="maxSize" :action="baseUrl" :ratio="0.5" :data="data" :disabled="false"
+                :errUpload="errUpload" :beforeUpload="beforeUpload" :successUpload="successUpload"
+                :uploadEnd="uploadEnd">
+    </yan-ya-sub>
   </div>
 </template>
 
@@ -16,24 +20,23 @@
                 msg: 'Welcome to Your Vue.js App',
                 baseUrl: 'http://restapidev.picup.shop/oss/upload',
                 data: {a: 1},
-                pressType:'quality',
-                maxSize:2048
+                pressType: 'size',
+                maxSize: 2048
             }
         },
-        components: {
-        },
-        methods:{
-            beforeUpload(file){
-                console.log(file,111111)
+        components: {},
+        methods: {
+            beforeUpload(file) {
+                console.log( file, 111111 )
             },
-            successUpload(res){
-                console.log(res.data,22222)
+            successUpload(res) {
+                console.log( res.data, 22222 )
             },
-            uploadEnd(){
-                console.log('上传完成')
+            uploadEnd() {
+                console.log( '上传完成' )
             },
-            errUpload(err){
-              console.log('上传失败',err)
+            errUpload(err) {
+                console.log( '上传失败', err )
             }
         }
     }
