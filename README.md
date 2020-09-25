@@ -104,7 +104,9 @@ SubName 为组件名称，具体名称可以从下方组件列表寻找
 
 
 :::tip
+
 提示：png图片只能通过size进行压缩(否则无效果)，jpeg两种方式都可以，
+
 :::
 
 For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
