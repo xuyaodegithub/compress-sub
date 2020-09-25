@@ -42,15 +42,15 @@ SubName 为组件名称，具体名称可以从下方组件列表寻找
 
 ### 基础用法
 ```html
- <yan-compress-sub :pressType="pressType"
-                   :maxSize="maxSize"
-                   :action="baseUrl"
-                   :ratio="ratio"
-                   :data="data"
-                   :errUpload="errUpload"
-                   :beforeUpload="beforeUpload"
-                   :successUpload="successUpload"
-                   :uploadEnd="uploadEnd">
+    <yan-compress-sub :pressType="pressType"
+                      :maxSize="maxSize"
+                      :action="baseUrl"
+                      :ratio="ratio"
+                      :data="data"
+                      :errUpload="errUpload"
+                      :beforeUpload="beforeUpload"
+                      :successUpload="successUpload"
+                      :uploadEnd="uploadEnd">
     </yan-compress-sub>
 
 <script>
