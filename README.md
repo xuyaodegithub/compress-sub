@@ -19,6 +19,7 @@ npm run build
 暂时就一个组件   后续会出其他组件   有需求的可以提
 全局引用
 import YanSubs form yan-compress-sub
+
 Vue.use(YanSubs)
 按需引用
 import { SubName } form yan-compress-sub
