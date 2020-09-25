@@ -28,7 +28,7 @@ Vue.component(SubName.name,SubName)
 
 # 组件列表
 
-## compressSub 图片上传组件（带压缩功能）
+## 1、compressSub 图片上传组件（带压缩功能）
 适用图片上传对图片大小有要求的
 
 ### 基础用法
