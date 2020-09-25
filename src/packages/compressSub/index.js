@@ -1,5 +1,5 @@
-import compressSub from './src/compressSub';
-compressSub.install=function(Vue,ops){
-  Vue.component(compressSub.name,compressSub);
+import CompressSub from './src/compressSub';
+CompressSub.install=function(Vue,ops){
+  Vue.component(CompressSub.name,CompressSub);
 }
-export default compressSub;
+export default CompressSub;

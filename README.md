@@ -17,19 +17,27 @@ npm run build
 
 ### 使用方法
 暂时就一个组件   后续会出其他组件   有需求的可以提
+
 全局引用
+
 import YanSubs form yan-compress-sub
 
 Vue.use(YanSubs)
+
 按需引用
+
 import { SubName } form yan-compress-sub
+
 Vue.component(SubName.name,SubName)
 
+:::tip
+SubName 为组件名称，具体名称可以从下方组件列表寻找
+:::
 
 
 # 组件列表
 
-## 1、compressSub 图片上传组件（带压缩功能）
+## 1、CompressSub 图片上传组件（带压缩功能）
 适用图片上传对图片大小有要求的
 
 ### 基础用法
