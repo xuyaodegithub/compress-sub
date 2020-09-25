@@ -1,8 +1,8 @@
 {
   "name": "yan-compress-sub",
-  "description": "图片压缩上传插件",
+  "description": "基于Vue组件，图片压缩上传组件",
   "keywords":["图片上传","图片压缩","压缩上传","上传组件","压缩组件","Yan组件库"],
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Mr.Yan(x845275351@163.com)",
   "license": "MIT",
   "private": false,

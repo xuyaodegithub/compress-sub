@@ -12,7 +12,7 @@ module.exports = {
     filename: 'compress-img.js',
     chunkFilename: '[id].js',
     libraryExport: 'default',
-    library: 'YanSubs',//库名
+    library: 'YANUI',//库名
     libraryTarget: 'umd'
   },
   module: {

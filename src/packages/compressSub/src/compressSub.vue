@@ -1,7 +1,10 @@
 <template>
   <div class="image" :style="style" @click="upBefor" :class="{ enable : disabled}">
     <input type="file" accept="image/*" style="display: none" @change="changeImg" ref="input">
-    <img :src="backImg" alt="" class="initB" v-show="!imageUrl">
+    <div class="initB">
+      <img :src="backImg" alt="" v-show="!imageUrl">
+      <p v-show="fail===backImg">上传失败~ 点击重试！</p>
+    </div>
     <img :src="imageUrl" alt=""  v-show="imageUrl" ref="loadAfter" :style="imgstyle">
   </div>
 </template>
@@ -10,14 +13,16 @@
     // import loading from "@/assets/loading.gif";
     var loading='https://deeplor.oss-cn-hangzhou.aliyuncs.com/matting/2020/09/24/loading.gif';
     // import fail from "@/assets/financial_fail.png";
-    var fail ='https://deeplor.oss-cn-hangzhou.aliyuncs.com/matting/2020/09/24/financial_fail.png';
-    import axios from 'axios'
-    import {compressImg, resetToblob} from "@/utils"
+    // var fail ='https://deeplor.oss-cn-hangzhou.aliyuncs.com/matting/2020/09/24/financial_fail.png';
+    var fail ='https://deeplor.oss-cn-hangzhou.aliyuncs.com/matting/2020/09/24/%E5%A4%B1%E8%B4%A5%20%281%29.png';
+    import axios from 'axios';
+    import {compressImg, resetToblob} from "@/utils";
 
     export default {
         name: "YanCompressSub",
         data() {
             return {
+                fail,
                 backImg:'https://deeplor.oss-cn-hangzhou.aliyuncs.com/matting/2020/09/24/upimg.png',
                 imageUrl: '',
                 imgstyle:{}
@@ -107,6 +112,7 @@
                 } else {
                     compressImg( file, this.pressType,this.ratio).then( blob => {
                         formData.append( this.name, blob );
+                        // console.log(formData)
                         this.upload( formData ,file,linkUrl)
                     } )
                 }
@@ -154,7 +160,7 @@
     position: relative;
   }
 
-  .image .initB,.image img {
+  .image .initB,.image > img {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -166,6 +172,19 @@
   }
   .image .initB{
     width: 30%;
+  }
+  .image .initB img{
+    display: block;
+    width: 100%;
+  }
+  .image .initB p{
+    position: absolute;
+    white-space: nowrap;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 14px;
+    line-height: 24px;
   }
   .image.enable:after {
     position: absolute;

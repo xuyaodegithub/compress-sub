@@ -20,7 +20,7 @@
                 msg: 'Welcome to Your Vue.js App',
                 baseUrl: 'http://restapidev.picup.shop/oss/upload',
                 data: {a: 1},
-                pressType: 'size',
+                pressType: 'quality',
                 maxSize: 2048
             }
         },
